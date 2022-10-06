@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Open+Sans:wght@300;400;500&display=swap');
+
+:root{
+    /* colors */
+    --body-color: #fff;
+    --fonst-color: #000;
+    --color-hover: #8babff;
+    --header-color: #fff;
+    --cortine-color: rgb(255,255,255);
+    --cortine-degradade: linear-gradient(180deg, rgba(255,255,255,0) 76%, rgba(255,255,255,1) 96%);
+    --footer-degradade: linear-gradient(180deg, rgba(255,255,255,1) 5%, rgba(255,0,0,0) 50%, rgba(255,255,255,0) 100%);
+
+    /* background images explorer */
+    --header-img: url(../img/header-light.jpg);
+    --tokyo-img: url(../img/Tokyio-light.jpeg);
+    --osaka-img: url(../img/osaka-light.png);
+    --shibuya-img: url(../img/shibuya-light.jpg);
+    --kyoto-img: url(../img/kyoto-light.jpg);
+    --kobe-img: url(../img/kobe-light.jpg);
+    --hiroshima-img: url(../img/hiroshima-light.jpg);
+
+    /* background images about */
+    --temple-img: url(../img/templo-semspji-light.jpg);
+    --sumida-img: url(../img/rio-Sumida-light.jpg);
+    --meiji-img: url(../img/Mejin-light.jpg);
+    --gardens-img: url(../img/hamarikyu-light.png);
+
+    /* background image footer */
+    --footer-img: url(../img/footer.webp);
+
+    /* typografi */
+    --monserrat: 'Montserrat', sans-serif;
+    --open-sans: 'Open Sans', sans-serif;
+}
+
+body.dark-theme{
+    --body-color: #18191a;
+    --fonst-color: #fff;
+    --cortine-degradade: linear-gradient(180deg, rgba(255,255,255,0) 76%, #18191a 96%);
+    --footer-degradade: linear-gradient(180deg, #18191a 5%, rgba(255,0,0,0) 50%, rgba(255,255,255,0) 100%);
+
+    /* background images */
+    --header-img: url(../img/header-dark-mode.jpg);
+    --tokyo-img: url(../img/Tokyo-dark-mode.jpg);
+    --osaka-img: url(../img/osaka-dark-mode.jpg);
+    --shibuya-img: url(../img/shibuya-dark-mode.jpg);
+    --kyoto-img: url(../img/kyoto-dark-mode.jpg);
+    --kobe-img: url(../img/kobe-dark-mode.jpg);
+    --hiroshima-img: url(../img/hiroshima-dark-mode.jpg);
+
+    /* background images about */
+    --temple-img: url(../img/templo-sensoji-dark-mode.jpg);
+    --sumida-img: url(../img/rio-sumida-dark-mode.webp);
+    --meiji-img: url(../img/meji-dark-mode.jpg);
+    --gardens-img: url(../img/Jardines-Hama-dark-mode.jpg);
+
+    /* background image footer */
+    --footer-img: url(../img/footer-dark-mode.jpg);
+}
+
+body{
+    font-family: var(--open-sans);
+    background-color: var(--body-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1,h2,h3{
+    font-family: var(--monserrat);
+    color: var(--fonst-color);
+}
+
+.main{
+    margin-bottom: 5rem;
+}
+
+
+
+/* reaulable class */
+.container{
+    max-width: 1200px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.flex{
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* class actives */
+.scroll-header{
+    background-color: var(--body-color);
+}
+
+.color-items{
+    color: var(--fonst-color) !important;
+}
+
+/* header menu */
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: var(--header-img);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.cortine{
+    position: absolute;
+    background: var(--cortine-color);
+    background: var(--cortine-degradade);
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.cortine__title{
+    color: #fff;
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+.subtitle{
+    color: #fff;
+    font-size: 20px;
+}
+
+.container__menu{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    padding: 0 1rem;
+    z-index: 80;
+    color: var(--header-color);
+    transition: all .3s;
+}
+
+.dd{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header__items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header__logo{
+    cursor: default;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header__btn{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .nav{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background-color: var(--body-color);
+        width: 80%;
+        height: 100vh;
+        padding: 2rem 0;
+        z-index: var(--z-fixed);
+        transition: .5s;
+        overflow-y: auto;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        z-index: 99;
+    }
+}
+
+/* class active menu */
+.show{
+    left: 0;
+}
+
+.nav__list{
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    cursor: pointer;
+}
+
+.nav__item{
+    color: var(--fonst-color);
+}
+
+.nav__item:hover{
+    transition: .3s;
+    color: var(--color-hover);
+}
+
+.lenguage{
+    margin-left: .50rem;
+    font-family: var(--open-sans);
+}
+
+/* explorer */
+.section__explorer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.prueba{
+    height: 1630px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.view-active{
+    height: 100% !important;
+}
+
+.view{
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    color: var(--fonst-color);
+    cursor: pointer;
+    font-weight: 600;
+}
+.menos{
+    display: none;
+}
+
+.section__place{
+    margin-top: 2rem;
+    width: 60vh;
+    height: 500px;
+    background-image: var(--tokyo-img);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    color: #fff;
+    padding: 0 1.5rem;
+    gap: 1rem;
+}
+
+.osaka{
+    background-image: var(--osaka-img);
+}
+
+.shibuya{
+    background-image: var(--shibuya-img);
+}
+
+.kyoto{
+    background-image: var(--kyoto-img);
+}
+
+.kobe{
+    background-image: var(--kobe-img);
+}
+
+.hiroshima{
+    background-image: var(--hiroshima-img);
+}
+
+.section__place--info{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.section__title{
+    margin-bottom: 1rem;
+    font-size: 30px;
+}
+
+.section__paragraph{
+    color: var(--fonst-color);
+}
+
+.place__title{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.place__paragraph{
+    margin-bottom: 1rem;
+}
+
+/* sites japan */
+.information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.information__title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.info__title{
+    text-transform: uppercase;
+}
+
+.information__about{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 1000px;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding-bottom: 2rem;
+}
+
+.abut-active{
+    height: auto !important;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.head{
+    width: 72vh;
+    height: 300px;
+    background-image: var(--temple-img);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sumida{
+    background-image: var(--sumida-img);
+}
+
+.meiji{
+    background-image: var(--meiji-img);
+}
+
+.garden{
+    background-image: var(--gardens-img);
+}
+
+
+.footer{
+    background-image: var(--footer-img);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.cortine__footer{
+    width: 100%;
+    height: 100%;
+    background: var(--cortine-color);
+    background: var(--footer-degradade);
+}
+
+.footer__text{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+}
+
+@media screen and (max-width: 550px) {
+    .subtitle{
+        font-size: 15px;
+    }
+
+    .section__place{
+        width: 80vw;
+        height: 400px;
+    }
+
+    .place__title{
+        font-size: 20px;
+    }
+
+    .place__paragraph{
+        font-size: 15px;
+    }
+
+    .prueba{
+        height: 1350px;
+    }
+
+    .info__title{
+        font-size: 20px;
+    }
+
+    .information__about{
+        height: 800px;
+    }
+    
+    .head{
+        width: 80vw;
+        height: 200px;
+    }
+
+    .head h3{
+        font-size: 18px;
+    }
+
+    .section__paragraph{
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 570px) {
+    .nav{
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .header__btn{
+        display: none;
+    }
+
+    .dd{
+        flex-direction: row;
+    }
+
+    .nav{
+        width: auto;
+    }
+
+    .nav__list{
+        margin-left: 0rem;
+        margin-top: 0rem;
+        flex-direction: row;
+        gap: 2rem;
+        cursor: pointer;
+        align-items: center;
+    }
+
+    .nav__item{
+        color: #fff;
+    }
+
+    .color-menu{
+        color: var(--fonst-color);
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .prueba{
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        height: 590px;
+    }
+
+    .section__place{
+        width: 380px;
+        margin-bottom: 2rem;
+    }
+
+    .information__about{
+        flex-direction: row;
+        height: 500px;
+        gap: 3rem;
+    }
+
+    .about{
+        width: 500px;
+        margin-bottom: 2rem;
+    }
+
+    .head{
+        width: 500px;
+    }
+}
