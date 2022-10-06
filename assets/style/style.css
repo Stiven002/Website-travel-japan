@@ -421,6 +421,7 @@ h1,h2,h3{
     .section__place{
         width: 80vw;
         height: 400px;
+        justify-content: flex-end;
     }
 
     .place__title{
